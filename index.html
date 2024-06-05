@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizualizacija proizvodnje goriva</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="skripta.js" defer></script>
+</head>
+<body>
+    <h1>Proizvodnja goriva</h1>
+    <div class="filter-container">
+        <label for="mapYearSlider">Odaberite godinu za kartu:</label>
+        <input type="range" id="mapYearSlider" min="2000" max="2020" step="1" value="2000">
+        <span id="mapYearValue">2000</span>
+    </div>
+    <div class="map-info-container">
+        <div id="world-map"></div>
+        <div class="info-container" id="infoContainer">
+            <div id="piechart-container">
+                <h2 id="country-data-title" class="hidden-title"> </h2>
+                <div class="chart-row">
+                    <div class="chart-column">
+                        <h3 id="crude-oil-title" class="hidden-title">Crude Oil</h3>
+                        <svg id="crude-oil-piechart" width="200" height="200"></svg>
+                    </div>
+                    <div class="chart-column">
+                        <h3 id="gasoline-diesel-title" class="hidden-title">Gasoline and diesel</h3>
+                        <svg id="gasoline-diesel-piechart" width="200" height="200"></svg>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-column">
+                        <h3 id="total-oil-products-title" class="hidden-title">Total oil production</h3>
+                        <svg id="total-oil-products-piechart" width="200" height="200"></svg>
+                    </div>
+                    <div class="chart-column">
+                        <h3 id="residual-fuel-oil-title" class="hidden-title">Residual fuel oil</h3>
+                        <svg id="residual-fuel-oil-piechart" width="200" height="200"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h1>Top 5</h1>
+    <div class="filter-container">
+        <label for="yearSelect">Odaberite godinu:</label>
+        <select id="yearSelect"></select>
+        <label for="productSelect">Odaberite vrstu goriva:</label>
+        <select id="productSelect"></select>
+        <label for="flowSelect">Odaberite tok:</label>
+        <select id="flowSelect"></select>
+    </div>
+    <div id="chart-container">
+        <svg width="960" height="600"></svg>
+    </div>
+</body>
+</html>

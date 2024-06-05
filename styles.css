@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #69b3a2;
+    --hover-color: #ff6347;
+    --selected-country-color: var(--primary-color);
+    --map-fill-color: #ddd;
+    --bar-fill-color: var(--primary-color);
+    --donut-colors: #1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b, #e377c2, #7f7f7f, #bcbd22, #17becf;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+}
+
+.bar {
+    fill: var(--bar-fill-color);
+}
+.bar:hover {
+    fill: var(--hover-color);
+    transition: fill 0.3s;
+}
+.axis-label {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+}
+.label {
+    font-size: 12px;
+    fill: black;
+    text-anchor: middle;
+}
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center; /* Dodano za vertikalno centriranje */
+}
+.filter-container label {
+    font-size: 16px; /* Povećana veličina fonta */
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+.filter-container select,
+.filter-container input[type="range"] {
+    padding: 5px;
+    font-size: 16px; /* Povećana veličina fonta */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+}
+.filter-container select:focus,
+.filter-container input[type="range"]:focus {
+    border-color: var(--hover-color);
+}
+
+.no-data {
+    font-size: 20px;
+    fill: red;
+    text-anchor: middle;
+}
+.country-label {
+    font-size: 20px;
+    margin: 10px;
+}
+.country {
+    fill: var(--map-fill-color);
+    stroke: #333;
+}
+.country:hover {
+    fill: var(--hover-color);
+    transition: fill 0.3s;
+}
+.info-container {
+    margin-top: 20px;
+}
+.info-container h2 {
+    margin: 0;
+    font-size: 18px;
+}
+.info-container p {
+    margin: 5px 0;
+}
+.map-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#world-map {
+    flex: 2;
+    max-width: 600px; 
+    max-height: 400px; 
+}
+#infoContainer {
+    flex: 1;
+    margin-left: 20px;
+}
+#piechart-container {
+    margin-top: 20px;
+}
+
+.arc path {
+    stroke: #fff;
+}
+
+.arc text {
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+.hidden-title {
+    display: none;
+}
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.chart-column {
+    flex: 1;
+    text-align: center;
+}
+
+.chart-column svg {
+    display: block;
+    margin: 0 auto;
+}
+.country-data-title {
+    text-align: center;
+}
+
+.arc text {
+    font-size: 11px;
+    text-anchor: middle;
+    pointer-events: none; 
+}
+#crude-oil-piechart, #gasoline-diesel-piechart, #total-oil-products-piechart, #residual-fuel-oil-piechart {
+    display: inline-block;
+    margin: -30px 10px;
+    width: 300px;  
+    height: 300px; 
+}
